@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffc15514518ad8246af9489f39b8a009
+guid: 0f87ba816e4c01a4691f184e9f83228c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -189,20 +189,15 @@ ModelImporter:
     400182: Zombie_Geo
     2100000: Zombie_COL
     4300000: Zombie_Geo
-    7400000: Zombie Idle
+    7400000: Zombie Death
     9500000: //RootNode
     13700000: Zombie_Geo
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zombie_COL
-    second: {fileID: 2100000, guid: 91427dbc3b765174a9c54ba6136da848, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -226,10 +221,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Zombie Idle
+      name: Zombie Death
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -7,10 +7,13 @@ public class Health : MonoBehaviour {
     [SerializeField] int maximumHealth = 100;
     int currentHealth = 0;
 
+    Animator anim;
+
 	// Use this for initialization
 	void Start () {
         currentHealth = maximumHealth;
-
+        anim = GetComponent<Animator>();
+        
 		
 	}
 
@@ -39,7 +42,18 @@ public class Health : MonoBehaviour {
         {
             if (gameObject.tag != "Player")
             {
+                if (anim)
+                {
+                    anim.SetBool("Dead", true);
+                }
                 UIScript.updateScore(50);
+
+                Destroy(GetComponent<EnemyNavMovement>());
+                Destroy(GetComponent<UnityEngine.AI.NavMeshAgent>());
+                Destroy(GetComponent<CharacterController>());
+                Destroy(GetComponentInChildren<EnemyAttack>());
+
+                
             }
         }
 

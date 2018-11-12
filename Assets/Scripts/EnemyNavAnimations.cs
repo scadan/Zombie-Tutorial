@@ -12,7 +12,7 @@ public class EnemyNavAnimations : MonoBehaviour {
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        anim = GetComponentInParent<Animator>();
+        
 	}
 	
 	// Update is called once per frame
@@ -24,4 +24,6 @@ public class EnemyNavAnimations : MonoBehaviour {
         }
 		
 	}
+
+    
 }

@@ -10,11 +10,11 @@ public class EnemyAttack : MonoBehaviour {
 
     [SerializeField] int damageDealt = 5;
 
-
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
-		
+        anim = GetComponentInParent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,7 @@ public class EnemyAttack : MonoBehaviour {
         if (other.tag == "Player" && Time.time >= nextTimeAttackIsAllowed)
         {
             Health playerHealth = other.GetComponent<Health>();
+            anim.SetTrigger("Attack");
             playerHealth.Damage(damageDealt);
             nextTimeAttackIsAllowed = Time.time + attackDelay;
         }

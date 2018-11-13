@@ -8,6 +8,8 @@ public class shootingScript : MonoBehaviour {
 
     Animator anim;
 
+    [SerializeField] GameObject bloodHit;
+
 	// Use this for initialization
 	void Start () {
 
@@ -32,6 +34,7 @@ public class shootingScript : MonoBehaviour {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             anim.SetTrigger("Fire");
+            GetComponentInChildren<ParticleSystem>().Play();
             Ray mouseRay = GetComponentInChildren<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hitInfo;
             
@@ -43,6 +46,9 @@ public class shootingScript : MonoBehaviour {
                 if (enemyHealth != null)
                 {
                     enemyHealth.Damage(damageDealt);
+                    Vector3 bloodHitPos = hitInfo.point;
+                    Quaternion bloodHitRot = Quaternion.FromToRotation(Vector3.forward, hitInfo.normal);
+                    Instantiate(bloodHit, bloodHitPos, bloodHitRot);
                 }
             }
         }

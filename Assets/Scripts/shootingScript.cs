@@ -31,6 +31,7 @@ public class shootingScript : MonoBehaviour {
 
         if (Input.GetButton("Fire1"))
         {
+            print("fire");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             anim.SetTrigger("Fire");
@@ -51,6 +52,11 @@ public class shootingScript : MonoBehaviour {
                     Instantiate(bloodHit, bloodHitPos, bloodHitRot);
                 }
             }
+        }
+        else if(!Input.GetButton("Fire1"))
+        {
+            print("not fire");
+            GetComponentInChildren<ParticleSystem>().Stop();
         }
 		
 	}

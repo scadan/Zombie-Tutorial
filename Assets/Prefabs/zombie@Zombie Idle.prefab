@@ -2007,7 +2007,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1670095824523266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.78, y: 0.03, z: 2.002}
+  m_LocalPosition: {x: -10.78, y: 0.03, z: 11.56}
   m_LocalScale: {x: 1.8641423, y: 1.8641423, z: 1.8641423}
   m_Children:
   - {fileID: 4366306135934776}
@@ -2749,6 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDelay: 1
   damageDealt: 5
+  bloodHit: {fileID: 1491140044759426, guid: f76ef36557a3df145938063fbfd6359a, type: 2}
 --- !u!114 &114920905118761766
 MonoBehaviour:
   m_ObjectHideFlags: 1

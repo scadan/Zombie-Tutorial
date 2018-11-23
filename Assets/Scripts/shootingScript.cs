@@ -10,6 +10,14 @@ public class shootingScript : MonoBehaviour {
 
     [SerializeField] GameObject bloodHit;
 
+    AudioSource audioSrc;
+    [SerializeField] AudioClip shootClip;
+
+    //My Modification//
+    float time;
+
+    double ShootTimer = 0.1;
+
 	// Use this for initialization
 	void Start () {
 
@@ -17,11 +25,15 @@ public class shootingScript : MonoBehaviour {
         Cursor.visible = false;
 
         anim = GetComponent<Animator>();
+
+        audioSrc = GetComponent<AudioSource>();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        time += Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -29,7 +41,7 @@ public class shootingScript : MonoBehaviour {
             Cursor.visible = true;
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && ShootTimer < time)
         {
             print("fire");
             Cursor.lockState = CursorLockMode.Locked;
@@ -38,6 +50,9 @@ public class shootingScript : MonoBehaviour {
             GetComponentInChildren<ParticleSystem>().Play();
             Ray mouseRay = GetComponentInChildren<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hitInfo;
+            audioSrc.clip = shootClip;
+            audioSrc.Play();
+            time = 0;
             
 
             if (Physics.Raycast (mouseRay, out hitInfo))

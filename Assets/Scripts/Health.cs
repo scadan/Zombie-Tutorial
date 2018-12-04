@@ -46,7 +46,7 @@ public class Health : MonoBehaviour {
                 {
                     anim.SetBool("Dead", true);
                 }
-                UIScript.updateScore(50);
+                //UIScript.updateScore(50);
 
                 Destroy(GetComponent<EnemyNavMovement>());
                 Destroy(GetComponent<UnityEngine.AI.NavMeshAgent>());

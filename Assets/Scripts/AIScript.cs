@@ -27,6 +27,7 @@ public class AIScript : MonoBehaviour {
 
     void RunBehaviours()
     {
+        print(currBehaviour);
         switch (currBehaviour)
         {
             case Behaviours.Patrol:
@@ -50,6 +51,8 @@ public class AIScript : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         healthPoint = GameObject.FindGameObjectWithTag("PickUp").transform;
         points = GameObject.FindGameObjectsWithTag("Waypoint");
+
+        
     }
 	
 	// Update is called once per frame
@@ -63,11 +66,13 @@ public class AIScript : MonoBehaviour {
 
     void RunPatrolState()
     {
+        print(Vector3.Distance(points[destPoint].transform.position, transform.position));
+        //print(agent.remainingDistance);
         if (Vector3.Distance(transform.position, player.position) < findDistance)
         {
             currBehaviour = Behaviours.Combat;
         }
-        else if (agent.remainingDistance < 0.5f)
+        else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 0.5f)
         {
             if (points.Length == 0)
             {
@@ -75,7 +80,12 @@ public class AIScript : MonoBehaviour {
             }
             agent.SetDestination(points[destPoint].transform.position);
             //if goes higher than the total number of waypoints -> go back to start of array
-            destPoint = (destPoint + 1) % points.Length;
+            //print("update waypoint");
+            destPoint++;
+            if(destPoint>points.Length-1)
+            {
+                destPoint = 0;
+            }
         }
     }
 
@@ -106,7 +116,11 @@ public class AIScript : MonoBehaviour {
         {
             return;
         }
+        agent.SetDestination(points[destPoint].transform.position);
+        //if goes higher than the total number of waypoints -> go back to start of array
+        //print("update waypoint");
+        destPoint =
+            ((destPoint + 1) % points.Length);
 
-       
     }
 }

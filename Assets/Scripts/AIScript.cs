@@ -54,10 +54,11 @@ public class AIScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (agent.remainingDistance < 0.5f)
+		if (healthScript.getHealth() < 25)
         {
-            GoToNextPoint();
+            currBehaviour = Behaviours.Heal;
         }
+        RunBehaviours();
  	}
 
     void RunPatrolState()

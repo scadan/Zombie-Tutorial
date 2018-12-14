@@ -42,6 +42,7 @@ public class AIScript : MonoBehaviour {
                 RunHealState();
                 break;
         }
+
     }
 
 	// Use this for initialization
@@ -52,7 +53,8 @@ public class AIScript : MonoBehaviour {
         healthPoint = GameObject.FindGameObjectWithTag("PickUp").transform;
         points = GameObject.FindGameObjectsWithTag("Waypoint");
 
-        
+        agent.SetDestination(points[destPoint].transform.position);
+       
     }
 	
 	// Update is called once per frame
@@ -62,37 +64,45 @@ public class AIScript : MonoBehaviour {
             currBehaviour = Behaviours.Heal;
         }
         RunBehaviours();
- 	}
+
+        //agent.SetDestination(points[destPoint].transform.position);
+    }
 
     void RunPatrolState()
     {
-        print(Vector3.Distance(points[destPoint].transform.position, transform.position));
+        print(Vector3.Distance(points[destPoint].transform.position, transform.position) + " destpoint " + destPoint);
+        //print(Vector3.Distance(points[destPoint].transform.position, transform.position));
         //print(agent.remainingDistance);
         if (Vector3.Distance(transform.position, player.position) < findDistance)
         {
             currBehaviour = Behaviours.Combat;
         }
-        else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 0.5f)
+        else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 1.5f)
         {
+            print("here");
+
+            
             if (points.Length == 0)
             {
                 return;
             }
-            agent.SetDestination(points[destPoint].transform.position);
+
             //if goes higher than the total number of waypoints -> go back to start of array
             //print("update waypoint");
             destPoint++;
-            if(destPoint>points.Length-1)
+            if (destPoint > points.Length - 1)
             {
                 destPoint = 0;
             }
+            agent.SetDestination(points[destPoint].transform.position);
+         
         }
     }
 
     void RunHealState()
     {
         agent.SetDestination(healthPoint.position);
-        if (agent.remainingDistance < 0.1f)
+        if (Vector3.Distance(healthPoint.position, player.position) <0.1f)
         {
             currBehaviour = Behaviours.Patrol;
         }
@@ -100,7 +110,7 @@ public class AIScript : MonoBehaviour {
 
     void RunCombatState()
     {
-        if (Vector3.Distance(transform.position, player.position) < chaseDistance)
+        if (Vector3.Distance(transform.position, player.position) > chaseDistance)
         {
             currBehaviour = Behaviours.Patrol;
         }

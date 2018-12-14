@@ -77,7 +77,7 @@ public class AIScript : MonoBehaviour {
         {
             currBehaviour = Behaviours.Combat;
         }
-        else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 1.5f)
+        else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 2f)
         {
             print("here");
 
@@ -93,7 +93,7 @@ public class AIScript : MonoBehaviour {
             if (destPoint > points.Length - 1)
             {
                 destPoint = 0;
-            }
+            }   
             agent.SetDestination(points[destPoint].transform.position);
          
         }

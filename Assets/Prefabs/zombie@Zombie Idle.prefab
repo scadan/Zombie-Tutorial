@@ -1003,6 +1003,7 @@ GameObject:
   - component: {fileID: 114930283494447882}
   - component: {fileID: 114920905118761766}
   - component: {fileID: 114875744715857016}
+  - component: {fileID: 136273474813219094}
   m_Layer: 0
   m_Name: zombie@Zombie Idle
   m_TagString: Untagged
@@ -2008,7 +2009,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1670095824523266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 384.2, y: 9.95, z: 219.8}
+  m_LocalPosition: {x: 261.3, y: 7.87, z: 219.8}
   m_LocalScale: {x: 1.8641423, y: 1.8641423, z: 1.8641423}
   m_Children:
   - {fileID: 4366306135934776}
@@ -2826,6 +2827,19 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136273474813219094
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670095824523266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137704317371193378
 SkinnedMeshRenderer:

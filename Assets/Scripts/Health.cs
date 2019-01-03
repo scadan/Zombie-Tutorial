@@ -9,11 +9,13 @@ public class Health : MonoBehaviour {
 
     Animator anim;
 
+    public Renderer renderer;
+
 	// Use this for initialization
 	void Start () {
         currentHealth = maximumHealth;
         anim = GetComponent<Animator>();
-        
+        renderer = GetComponentInChildren<Renderer>();
 		
 	}
 
@@ -31,7 +33,10 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (IsDead&&!renderer.isVisible)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     public void Damage(int damageValue)

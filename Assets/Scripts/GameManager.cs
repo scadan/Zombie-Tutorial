@@ -10,14 +10,29 @@ public class GameManager : MonoBehaviour {
     public Text playerHealthTxt;
     public Text timeTxt;
 
+	public bool won = false;
+
+	public GameObject youWinCanvas;
+
+	
 	// Use this for initialization
 	void Start () {
+		youWinCanvas.SetActive(false);
+
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Time.timeSinceLevelLoad > 180) 
+		{
+			won = true;
+		}
+
+		if (won == true) {
+			youWinCanvas.SetActive(true);
+			Time.timeScale = 0;
+		}
 	}
 
    

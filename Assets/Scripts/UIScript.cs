@@ -13,12 +13,12 @@ public class UIScript : MonoBehaviour {
     public Text timeNum;
     static int score;
 
-    
+    public GameObject youLoseCanvas;
 
 	// Use this for initialization
 	void Start () {
 
-       
+       youLoseCanvas.SetActive(false);
 		
 	}
 
@@ -39,5 +39,12 @@ public class UIScript : MonoBehaviour {
 
         timeNum.text = "" + (int)Time.time;
         scoreNum.text = score + "";
+
+        if (healthScript.IsDead) 
+        {
+        youLoseCanvas.SetActive(true);
+
+        Time.timeScale = 0;
+        }
     }
 }

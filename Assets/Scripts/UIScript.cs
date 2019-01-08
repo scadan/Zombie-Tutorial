@@ -11,7 +11,7 @@ public class UIScript : MonoBehaviour {
 
     public Text scoreNum;
     public Text timeNum;
-    static int score;
+    public static int score;
 
     public GameObject youLoseCanvas;
 

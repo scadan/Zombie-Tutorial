@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
 
     public Renderer renderer;
 
-    randomSpawn randomSpawnScript;
+    public randomSpawn randomSpawnScript;
 
 	// Use this for initialization
 	void Start () {

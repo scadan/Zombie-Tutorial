@@ -11,6 +11,8 @@ public class Health : MonoBehaviour {
 
     public Renderer renderer;
 
+    randomSpawn randomSpawnScript;
+
 	// Use this for initialization
 	void Start () {
         currentHealth = maximumHealth;
@@ -50,6 +52,8 @@ public class Health : MonoBehaviour {
                 if (anim)
                 {
                     anim.SetBool("Dead", true);
+                    randomSpawnScript.numberSpawned--;
+
                 }
                 UIScript.updateScore(50);
 

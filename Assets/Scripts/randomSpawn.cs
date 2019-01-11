@@ -14,17 +14,15 @@ public class randomSpawn : MonoBehaviour
 
     private int terrainPosX;
     private int terrainPosZ;
-    public GameObject ToPlaceZombie;
+    public GameObject ObjectToPlace;
 
     
 
-    float timer;
-
-    public int TimeTillNextSpawn;
+    
 
     public float numberSpawned;
 
-    int maxSpawn = 10;
+    public int maxSpawn = 10;
    
     // Start is called before the first frame update
     void Start()
@@ -40,21 +38,21 @@ public class randomSpawn : MonoBehaviour
     void Update()
     {
 
-        timer += Time.deltaTime;
        
-        if (numberSpawned < maxSpawn && timer < TimeTillNextSpawn) {
+       
+        if (numberSpawned < maxSpawn) {
                 int posx = Random.Range(terrainPosX, terrainPosX + TerrainWidth);
                 int posz = Random.Range(terrainPosZ, terrainPosZ + TerrainLength);
 
                 float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
 
-                GameObject newZombie = Instantiate(ToPlaceZombie, new Vector3(posx, posy, posz), Quaternion.identity);
+                GameObject newZombie = Instantiate(ObjectToPlace, new Vector3(posx, posy, posz), Quaternion.identity);
 
                
 
                 numberSpawned++;
 
-                timer = 0;
+               
         }
     }
 }

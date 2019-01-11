@@ -14,9 +14,16 @@ public class EnemyAttack : MonoBehaviour {
 
     Animator anim;
 
+    //Addition//
+    AudioSource audioSource;
+
+    public AudioClip playerHurtSound;
+
 	// Use this for initialization
 	void Start () {
         anim = GetComponentInParent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +45,8 @@ public class EnemyAttack : MonoBehaviour {
             Instantiate(bloodHit, hitEffectPos, hitEffectRotation);
 
             nextTimeAttackIsAllowed = Time.time + attackDelay;
+
+            audioSource.PlayOneShot(playerHurtSound);
         }
     }
 }

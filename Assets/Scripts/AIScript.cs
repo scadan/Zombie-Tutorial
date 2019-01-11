@@ -124,6 +124,7 @@ public class AIScript : MonoBehaviour {
         audioSource.clip = ZombieAttack;
 
         audioSource.Play();
+     
 
         if (Vector3.Distance(transform.position, player.position) > chaseDistance)
         {

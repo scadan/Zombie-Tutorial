@@ -18,16 +18,28 @@ public class playerMovement : MonoBehaviour {
 
     [SerializeField] GameObject Cam;
 
+    AudioSource audioSource;
 
+    [SerializeField] AudioClip runClip;
+
+    public float runSpeed;
+
+    bool running;
 
 	// Use this for initialization
 	void Start () {
         charController = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        
+
+        runSpeed = charController.velocity.magnitude;
 
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
@@ -58,5 +70,30 @@ public class playerMovement : MonoBehaviour {
 
         charController.Move(velocity * Time.deltaTime);
 
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) {
+            
+            running = true;
+            
+        }
+        else {
+            running = false;
+        }
+
+        if (running == true) {
+
+            if (!audioSource.isPlaying) 
+            {
+             audioSource.clip = runClip;
+
+            audioSource.Play();
+            }
+            
+        }
+       
+       if (running = false) {
+           audioSource.Stop();
+       }
+
     }
 }
+

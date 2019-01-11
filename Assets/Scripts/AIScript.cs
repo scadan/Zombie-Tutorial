@@ -25,6 +25,10 @@ public class AIScript : MonoBehaviour {
     public GameObject[] points;
     public int destPoint = 0;
 
+    AudioSource audioSource;
+
+    public AudioClip ZombieGroan, ZombieAttack;
+
     void RunBehaviours()
     {
         print(currBehaviour);
@@ -54,6 +58,8 @@ public class AIScript : MonoBehaviour {
         points = GameObject.FindGameObjectsWithTag("Waypoint");
 
         agent.SetDestination(points[destPoint].transform.position);
+
+        audioSource = GetComponent<AudioSource>();
        
     }
 	
@@ -70,6 +76,10 @@ public class AIScript : MonoBehaviour {
 
     void RunPatrolState()
     {
+        audioSource.clip = ZombieGroan;
+
+            audioSource.Play();
+
         print(Vector3.Distance(points[destPoint].transform.position, transform.position) + " destpoint " + destPoint);
         //print(Vector3.Distance(points[destPoint].transform.position, transform.position));
         //print(agent.remainingDistance);
@@ -105,11 +115,16 @@ public class AIScript : MonoBehaviour {
         if (Vector3.Distance(healthPoint.position, player.position) <0.1f)
         {
             currBehaviour = Behaviours.Patrol;
+            
         }
     }
 
     void RunCombatState()
     {
+        audioSource.clip = ZombieAttack;
+
+        audioSource.Play();
+
         if (Vector3.Distance(transform.position, player.position) > chaseDistance)
         {
             currBehaviour = Behaviours.Patrol;

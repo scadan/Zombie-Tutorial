@@ -714,6 +714,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1670095824523266, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
+      propertyPath: m_Name
+      value: zombie@Zombie Idle
+      objectReference: {fileID: 0}
     - target: {fileID: 4500880470849532, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 261.3
@@ -745,6 +749,18 @@ PrefabInstance:
     - target: {fileID: 4500880470849532, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500880470849532, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500880470849532, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500880470849532, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114930283494447882, guid: db9888efaf6cc314d8f3900f00ad73f8,
         type: 3}
@@ -811,21 +827,20 @@ PrefabInstance:
       propertyPath: points.Array.data[8]
       value: 
       objectReference: {fileID: 1793602781}
-    - target: {fileID: 136273474813219094, guid: db9888efaf6cc314d8f3900f00ad73f8,
-        type: 3}
-      propertyPath: m_Height
-      value: 2.6672192
-      objectReference: {fileID: 0}
-    - target: {fileID: 136273474813219094, guid: db9888efaf6cc314d8f3900f00ad73f8,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.8336099
-      objectReference: {fileID: 0}
     - target: {fileID: 114920905118761766, guid: db9888efaf6cc314d8f3900f00ad73f8,
         type: 3}
       propertyPath: randomSpawnScript
       value: 
       objectReference: {fileID: 2100602853}
+    - target: {fileID: 4328346024568979481, guid: db9888efaf6cc314d8f3900f00ad73f8,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.351
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718447661, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.351
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
 --- !u!1 &994250234

@@ -18,7 +18,9 @@ public class randomSpawn : MonoBehaviour
 
     
 
+    float timer;
 
+    public int TimeTillNextSpawn;
 
     public float numberSpawned;
 
@@ -37,8 +39,10 @@ public class randomSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        timer += Time.deltaTime;
        
-        if (numberSpawned < maxSpawn) {
+        if (numberSpawned < maxSpawn && timer < TimeTillNextSpawn) {
                 int posx = Random.Range(terrainPosX, terrainPosX + TerrainWidth);
                 int posz = Random.Range(terrainPosZ, terrainPosZ + TerrainLength);
 
@@ -49,6 +53,8 @@ public class randomSpawn : MonoBehaviour
                
 
                 numberSpawned++;
+
+                timer = 0;
         }
     }
 }

@@ -20,7 +20,7 @@ public class randomSpawn : MonoBehaviour
 
     
 
-    public float numberSpawned;
+    public int numberSpawned;
 
     public int maxSpawn = 10;
    
@@ -38,8 +38,8 @@ public class randomSpawn : MonoBehaviour
     void Update()
     {
 
-       
-       
+        
+       //if the number of spawned zombies is less than the max spawned...
         if (numberSpawned < maxSpawn) {
                 int posx = Random.Range(terrainPosX, terrainPosX + TerrainWidth);
                 int posz = Random.Range(terrainPosZ, terrainPosZ + TerrainLength);
@@ -47,8 +47,12 @@ public class randomSpawn : MonoBehaviour
                 float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
 
                 GameObject newZombie = Instantiate(ObjectToPlace, new Vector3(posx, posy, posz), Quaternion.identity);
-
-               
+                if(newZombie.GetComponent<Health>())
+                {
+                newZombie.GetComponent<Health>().randomSpawnScript = this;
+                }
+                print("spawn");
+                
 
                 numberSpawned++;
 

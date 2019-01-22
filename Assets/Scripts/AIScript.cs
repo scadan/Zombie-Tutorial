@@ -31,7 +31,7 @@ public class AIScript : MonoBehaviour {
 
     void RunBehaviours()
     {
-        print(currBehaviour);
+        
         switch (currBehaviour)
         {
             case Behaviours.Patrol:
@@ -80,17 +80,12 @@ public class AIScript : MonoBehaviour {
 
             audioSource.Play();
 
-        print(Vector3.Distance(points[destPoint].transform.position, transform.position) + " destpoint " + destPoint);
-        //print(Vector3.Distance(points[destPoint].transform.position, transform.position));
-        //print(agent.remainingDistance);
         if (Vector3.Distance(transform.position, player.position) < findDistance)
         {
             currBehaviour = Behaviours.Combat;
         }
         else if (Vector3.Distance(points[destPoint].transform.position, transform.position) < 2f)
         {
-            print("here");
-
             
             if (points.Length == 0)
             {

@@ -18,6 +18,7 @@ public class Health : MonoBehaviour {
         currentHealth = maximumHealth;
         anim = GetComponent<Animator>();
         renderer = GetComponentInChildren<Renderer>();
+        
 		
 	}
 
@@ -52,12 +53,15 @@ public class Health : MonoBehaviour {
                 if (anim)
                 {
                     anim.SetBool("Dead", true);
-                    randomSpawnScript.numberSpawned--;
+                   
 
                 }
+                randomSpawnScript.numberSpawned--;
                 UIScript.updateScore(50);
 
-                Destroy(GetComponent<EnemyNavMovement>());
+                Destroy(GetComponent<AIScript>());
+                print("DEAD");
+                GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped=true;
                 Destroy(GetComponent<UnityEngine.AI.NavMeshAgent>());
                 Destroy(GetComponent<CharacterController>());
                 Destroy(GetComponentInChildren<EnemyAttack>());

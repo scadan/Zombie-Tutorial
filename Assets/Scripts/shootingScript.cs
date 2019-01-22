@@ -70,7 +70,7 @@ public class shootingScript : MonoBehaviour {
         }
         else if(!Input.GetButton("Fire1"))
         {
-            print("not fire");
+            //print("not fire");
             GetComponentInChildren<ParticleSystem>().Stop();
         }
 		

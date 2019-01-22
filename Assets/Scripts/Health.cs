@@ -45,6 +45,9 @@ public class Health : MonoBehaviour {
 
     public void Damage(int damageValue)
     {
+        if (IsDead) {
+            return;
+        }
         currentHealth -= damageValue;
 
         if (currentHealth <= 0)
@@ -58,6 +61,9 @@ public class Health : MonoBehaviour {
 
                 }
                 randomSpawnScript.numberSpawned--;
+
+                StartCoroutine(Despawn());
+
                 UIScript.updateScore(50);
 
                 Destroy(GetComponent<AIScript>());
@@ -66,11 +72,11 @@ public class Health : MonoBehaviour {
                 Destroy(GetComponent<UnityEngine.AI.NavMeshAgent>());
                 Destroy(GetComponent<CharacterController>());
                 Destroy(GetComponentInChildren<EnemyAttack>());
-                Destroy(GetComponent<Health>());
+                this.enabled = false;
 
                 gameObject.name += " (Dead)";
 
-                StartCoroutine(Despawn());
+                
 
                 
             }
@@ -84,5 +90,7 @@ public class Health : MonoBehaviour {
         yield return new WaitForSeconds(5);
 
         Destroy(gameObject);
+
+        print("Despawned");
     }
 }

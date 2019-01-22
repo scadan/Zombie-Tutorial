@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,11 +66,23 @@ public class Health : MonoBehaviour {
                 Destroy(GetComponent<UnityEngine.AI.NavMeshAgent>());
                 Destroy(GetComponent<CharacterController>());
                 Destroy(GetComponentInChildren<EnemyAttack>());
+                Destroy(GetComponent<Health>());
+
+                gameObject.name += " (Dead)";
+
+                StartCoroutine(Despawn());
 
                 
             }
         }
 
         
+    }
+
+    private IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(5);
+
+        Destroy(gameObject);
     }
 }

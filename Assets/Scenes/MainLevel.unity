@@ -566,6 +566,41 @@ PrefabInstance:
       propertyPath: surviveBadge
       value: 
       objectReference: {fileID: 494696285}
+    - target: {fileID: 137525199822958142, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc9c7d35d37c6cf478c35722e94f45b8, type: 2}
+    - target: {fileID: 137750360236274568, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ecc68dd308371e458c53160af05f726, type: 2}
+    - target: {fileID: 137499378758177830, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8b7e704133c4254281dcea49ee4902f, type: 2}
+    - target: {fileID: 137623760202736292, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e54596fb3cc7e8a419e4b2ae75ddeb17, type: 2}
+    - target: {fileID: 137739434712340876, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eed741340f125a7478a31e8a7b628796, type: 2}
+    - target: {fileID: 137320156822824246, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dba68b860696b534fa4feb24362e3e07, type: 2}
+    - target: {fileID: 137268699099685820, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f8a3ee7e3f3906429d85475e5e02b83, type: 2}
     - target: {fileID: 1053465270, guid: 62abbcb41d0d05742987241d684ee302, type: 3}
       propertyPath: m_Intensity
       value: 3.49

@@ -47,4 +47,4 @@ MonoBehaviour:
   ObjectToPlace: {fileID: 3387874193611148036, guid: 83b045d28cd0d34488f40af4db8f5319,
     type: 3}
   numberSpawned: 0
-  maxSpawn: 3
+  maxSpawn: 10

@@ -92,8 +92,12 @@ public class playerMovement : MonoBehaviour {
        
        if (running = false) {
            audioSource.Stop();
+
+           
        }
 
     }
+
+
 }
 

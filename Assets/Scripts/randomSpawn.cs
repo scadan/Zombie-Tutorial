@@ -39,7 +39,7 @@ public class randomSpawn : MonoBehaviour
     {
 
         
-       //if the number of spawned zombies is less than the max spawned...
+       //if the number of spawned objects is less than the max spawned...
         if (numberSpawned < maxSpawn) {
                 int posx = Random.Range(terrainPosX, terrainPosX + TerrainWidth);
                 int posz = Random.Range(terrainPosZ, terrainPosZ + TerrainLength);

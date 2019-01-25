@@ -13,6 +13,8 @@ public class shootingScript : MonoBehaviour {
     AudioSource audioSrc;
     [SerializeField] AudioClip shootClip;
 
+    [SerializeField] AudioClip reloadClip;
+
     //My Modification//
     float time;
 
@@ -74,5 +76,19 @@ public class shootingScript : MonoBehaviour {
             GetComponentInChildren<ParticleSystem>().Stop();
         }
 		
+    
+
 	}
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "BulletPickup") {
+            damageDealt += 20;
+
+            Destroy(collision.gameObject);
+
+            audioSrc.clip = reloadClip;
+
+            audioSrc.Play();
+        }
+    }
 }

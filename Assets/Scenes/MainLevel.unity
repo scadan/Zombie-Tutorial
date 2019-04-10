@@ -617,6 +617,56 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Strength
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6935331580761669136, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935331580761669136, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935331580761669136, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935331580761669136, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935331580761669136, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934149030934453378, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934149030934453378, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 6934149030934453378, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934149030934453378, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934149030934453378, guid: 62abbcb41d0d05742987241d684ee302,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62abbcb41d0d05742987241d684ee302, type: 3}
 --- !u!4 &273104849 stripped
@@ -989,6 +1039,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1952244525}
+    - target: {fileID: 114920905118761766, guid: db9888efaf6cc314d8f3900f00ad73f8,
+        type: 3}
+      propertyPath: randomSpawnScript
+      value: 
+      objectReference: {fileID: 2100602853}
     - target: {fileID: 114875744715857016, guid: db9888efaf6cc314d8f3900f00ad73f8,
         type: 3}
       propertyPath: player
@@ -1044,11 +1099,6 @@ PrefabInstance:
       propertyPath: points.Array.data[8]
       value: 
       objectReference: {fileID: 1793602781}
-    - target: {fileID: 114920905118761766, guid: db9888efaf6cc314d8f3900f00ad73f8,
-        type: 3}
-      propertyPath: randomSpawnScript
-      value: 
-      objectReference: {fileID: 2100602853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db9888efaf6cc314d8f3900f00ad73f8, type: 3}
 --- !u!1 &715162621
@@ -1238,6 +1288,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1645484029982044649, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1352,21 +1417,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645484030640240788, guid: 1e78d6c06f37e7e47a81ea24a369c2c3,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e78d6c06f37e7e47a81ea24a369c2c3, type: 3}
